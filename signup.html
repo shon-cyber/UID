@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - TourGuide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">{TourGuide }</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="add-city.html" class="btn btn-primary">Add City</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-container fade-in" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding-top: 100px;">
+        <div class="form-box glassmorphism scale-in" style="max-width: 450px; width: 100%;">
+            <h2 style="margin-bottom: 5px;">Create an Account</h2>
+            <p style="margin-bottom: 25px; color: #666;">Join us to contribute locations and more.</p>
+            <form id="signupForm">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="e.g. John Doe">
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Password (min 6 chars)" minlength="6">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <button type="submit" class="btn btn-large w-100" style="margin-top: 1.5rem;">Sign Up</button>
+                <div class="status-message" id="statusMsg" style="margin-top: 15px;"></div>
+                <p style="text-align: center; margin-top: 1rem;">Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Log In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            
+            let isValid = true;
+            if(!name.match(/^[a-zA-Z ]+$/)) {
+                document.getElementById("name-error").innerText = "Please enter a valid name";
+                isValid = false;
+            } else {
+                document.getElementById("name-error").innerText = "";
+            }
+            if(!email.match(/^\S+@\S+\.\S+$/)) {
+                document.getElementById("email-error").innerText = "Please enter a valid email";
+                isValid = false;
+            } else {
+                document.getElementById("email-error").innerText = "";
+            }
+            if(password.length < 6) {
+                document.getElementById("password-error").innerText = "Password must be at least 6 characters";
+                isValid = false;
+            } else {
+                document.getElementById("password-error").innerText = "";
+            }
+
+            if (!isValid) return;
+
+            const success = signupUser(name, email, password);
+            if(success) {
+                document.getElementById("statusMsg").innerText = "Account created! Redirecting...";
+                document.getElementById("statusMsg").style.color = "green";
+                setTimeout(() => { window.location.href = "index.html"; }, 1000);
+            } else {
+                document.getElementById("statusMsg").innerText = "An account with this email already exists.";
+                document.getElementById("statusMsg").style.color = "red";
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

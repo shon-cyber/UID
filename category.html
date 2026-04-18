@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - TourGuide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">{TourGuide }</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html" class="active">Explore</a></li>
+            <li><a href="add-city.html" class="btn btn-primary">Add City</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header" id="categoryHeader">
+        <h1 id="pageTitle">Loading...</h1>
+        <p>Discover the finest places curated by our team and community.</p>
+    </div>
+
+    <section class="details-grid" id="cityList">
+        <!-- Javascript will populate this section based on the URL query string -->
+    </section>
+
+    <!-- Modal Backdrop and Container -->
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal-window scale-in">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <img src="" id="modalImg" alt="City Image" />
+            </div>
+            <div class="modal-body">
+                <h2 id="modalTitle">City Name</h2>
+                <div class="modal-tags">
+                    <span class="tag" id="modalLocation">📍 Location</span>
+                    <span class="tag" id="modalBudget">💰 Budget</span>
+                </div>
+                <h3>History</h3>
+                <p id="modalHistory">History goes here</p>
+                <h3>Local Food & Recipes</h3>
+                <p id="modalRecipes">Food recipes and famous meals</p>
+                <h3 id="modalDetailsHeader">Submission Details</h3>
+                <p id="modalDetails">Description details</p>
+                <div class="modal-footer">
+                    <small id="modalAuthor">Submitted by: Author</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load data first, then logic -->
+    <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

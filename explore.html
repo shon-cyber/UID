@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - TourGuide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">{TourGuide }</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html" class="active">Explore</a></li>
+            <li><a href="add-city.html" class="btn btn-primary">Add City</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Explore The World</h1>
+        <p>Discover categories that spark your curiosity</p>
+    </div>
+
+    <section class="category-grid">
+        <div class="category-card slide-in-left">
+            <div class="category-image historic-bg"></div>
+            <div class="category-content">
+                <h2>Historic Places</h2>
+                <p>Step back in time and visit the majestic monuments and ancient civilizations.</p>
+                <a href="category.html?type=historic" class="btn btn-outline">View History</a>
+            </div>
+        </div>
+
+        <div class="category-card slide-in-right delay-1">
+            <div class="category-image food-bg"></div>
+            <div class="category-content">
+                <h2>Foods</h2>
+                <p>Taste the most spectacular street foods and Michelin cuisines from around the globe.</p>
+                <a href="category.html?type=food" class="btn btn-outline">View Local Cuisine</a>
+            </div>
+        </div>
+        
+        <div class="category-card slide-in-left delay-2">
+            <div class="category-image festival-bg"></div>
+            <div class="category-content">
+                <h2>Local Festivals</h2>
+                <p>Experience the vibrancy of culture in action, from Rio Carnival to Diwali.</p>
+                <a href="category.html?type=festivals" class="btn btn-outline">View Festivals</a>
+            </div>
+        </div>
+
+        <div class="category-card slide-in-right">
+            <div class="category-image wonders-bg"></div>
+            <div class="category-content">
+                <h2>Natural Wonders</h2>
+                <p>Majestic landscapes blending with raw nature, ready to be explored.</p>
+                <a href="category.html?type=wonders" class="btn btn-outline">View Wonders</a>
+            </div>
+        </div>
+
+        <div class="category-card slide-in-left delay-1">
+            <div class="category-image museum-bg"></div>
+            <div class="category-content">
+                <h2>Museums & Art</h2>
+                <p>Marvel at the finest collections of global art, history, and scientific discovery.</p>
+                <a href="category.html?type=museums" class="btn btn-outline">View Museums</a>
+            </div>
+        </div>
+
+        <div class="category-card slide-in-right delay-2">
+            <div class="category-image hidden-bg"></div>
+            <div class="category-content">
+                <h2>Hidden Gems</h2>
+                <p>Discover untouched locations off the beaten path that most tourists miss.</p>
+                <a href="category.html?type=hidden" class="btn btn-outline">View Secrets</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

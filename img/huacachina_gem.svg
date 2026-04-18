@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgHuacachina" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12" />
+      <stop offset="100%" stop-color="#d35400" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgHuacachina)" />
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFF" text-anchor="middle">Huacachina Oasis</text>
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="24" fill="#FFF" text-anchor="middle">Hidden Gem</text>
+</svg>
